@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<h1>This ml5 model allows the camera to track your nose as it moves around the screen!</h1>
+<h2>27.8.22</h2>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <main>
+    </main>
+    <script src="sketch.js"></script>
+  </body>
+</html>
+<script>
+    var poseNet;
+var video;
+var nose;
+function setup() {
+  video=createCapture(VIDEO);
+  createCanvas(windowWidth, windowHeight);
+  video.hide();
+  nose=createVector(width/2,height/2);
+  poseNet = ml5.poseNet(video, modelReady);
+  poseNet.on('pose', gotPoses);
+}
+function modelReady(){
+   console.log("Model Loaded, finally!"); 
+}
+function gotPoses(poses){
+  if (poses.length > 0){
+    let poseNose = poses[0].pose.nose;
+    nose.x=poseNose.x
+    nose.y=poseNose.y
+  }
+}
+function draw() {
+  background(220);
+  image(video,0,0);
+  fill(255,255,0);
+  circle(nose.x, nose.y, 20);
+  
+}
+</script>
+<br>
+<br>
