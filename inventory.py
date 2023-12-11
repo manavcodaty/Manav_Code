@@ -1,4 +1,12 @@
 import time
+
+import random
+
+global item_id
+item_id = 2
+
+
+
 global products
 products = [["1","chips",15,"solid","20g",12]]
 
@@ -34,6 +42,12 @@ def start():
         
         
         
+
+    
+    
+        
+        
+        
 def search():
     #code to search item
     print("Enter item name to search: ")
@@ -59,7 +73,7 @@ def update():
     for i in range(len(products)):
         if products[i][1] == item_name:
             print("Enter new details of",item_name)
-            products[i][0] = input("Enter new ID: ")
+            products[i][0] = make_id()
             products[i][1] = input("Enter new name: ")
             products[i][2] = int(input("Enter new quantity: "))
             products[i][3] = input("Enter new type: ")
@@ -87,7 +101,6 @@ def check_unique():
 def add():
     #code to add item
     global item_id 
-    item_id = input("Enter item ID: ")
     check_unique()
     global item_name 
     item_name = input("Enter item name: ")
@@ -101,7 +114,7 @@ def add():
     item_price = float(input("Enter item price: "))
     
     products.append([item_id,item_name,item_quantity,item_type,item_weight,item_price])
-    
+    item_id += 1
     print("Item added successfully")
     input("Press enter to continue...")
     start()
@@ -134,8 +147,10 @@ def remove():
 def print_items():
     #code to print all items
     print("All items:")
-    for item in products:
-        print(item)
+    
+    for i in products:
+        for j in products:
+            print(products[i][j], end="|")
     input("Press enter to continue...")
     start()
     

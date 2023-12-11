@@ -1,7 +1,9 @@
 import time
 import csv
+import pandas as pd
+from pandas import DataFrame
 global products
-products = [["1","chips",15,"solid","20g",12]]
+products = [["0","chips",15,"solid","20g",12]]
 
 
 
@@ -101,7 +103,28 @@ def add():
     global item_price 
     item_price = float(input("Enter item price: "))
     
-    products.append([item_id,item_name,item_quantity,item_type,item_weight,item_price])
+    data = {'item_id': [item_id],
+
+     'item_name': [item_name],
+
+     'item_quantity': [item_quantity],
+
+     'item_type': [item_type],
+     
+     'item_weight': [item_weight],
+     
+     'item_price': [item_price]
+     
+
+     }
+
+    df = pd.DataFrame(data)
+ 
+    # append data frame to CSV file
+    df.to_csv('inventory.csv', mode='a', index=False, header=False)
+ 
+    # print message
+    print("Data appended successfully.")
     
     print("Item added successfully")
     input("Press enter to continue...")
@@ -134,11 +157,11 @@ def remove():
 
 def print_items():
     #code to print all items
-   with open('inventory.csv', 'r') as csv_file:
-    reader = csv.reader(csv_file)
 
-    for row in reader:
-        print(row)
+    df = pd.read_csv('inventory.csv')
+
+    print(df.to_string())
+
     
     
     

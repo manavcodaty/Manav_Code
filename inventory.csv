@@ -1,2 +1,3 @@
 ID,Name,Quantity,Type,Weight,Price
-1,Chips,15,Solid,20g,12
+
+1,chips,15,solid,20.0,12.0
