@@ -5,6 +5,10 @@ from pandas import DataFrame
 global products
 products = [["0","chips",15,"solid","20g",12]]
 
+global item_id
+item_id = 2
+
+
 
 
     
@@ -89,8 +93,6 @@ def check_unique():
 
 def add():
     #code to add item
-    global item_id 
-    item_id = input("Enter item ID: ")
     check_unique()
     global item_name 
     item_name = input("Enter item name: ")
@@ -122,6 +124,7 @@ def add():
  
     # append data frame to CSV file
     df.to_csv('inventory.csv', mode='a', index=False, header=False)
+    item_id += 1
  
     # print message
     print("Data appended successfully.")
