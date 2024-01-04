@@ -1,4 +1,4 @@
-package Java_playground;
+package Java_projects;
 import java.util.Scanner;
 public class adding_2_numbers {
     public static void main(String[] args) {

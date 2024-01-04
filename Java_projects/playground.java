@@ -1,4 +1,4 @@
-package Java_playground;
+package Java_projects;
 public class playground {
     public class Tutor{
         public String name;
