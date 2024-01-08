@@ -1,3 +1,5 @@
+#piece of code that is missing from the mark questions
+
 import random
 def task2(): 
     count1 = 1 
