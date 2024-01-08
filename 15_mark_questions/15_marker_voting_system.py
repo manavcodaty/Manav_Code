@@ -63,7 +63,7 @@ def ask_stuff():
 
 
 print("Welcome to the student voting system")
-ask_stuff()
+ask_stuff() 
 
 # Create a TutorGroup instance
 group = TutorGroup(Group_name, Num_students, Num_candidates)
