@@ -12,6 +12,11 @@ menu = {
     "GB": {"name": "Garlic bread", "price": 4.50}
 }
 
+def print_menu():
+    print("-----------Menu-----------")
+    for item_code, item in menu.items():
+        print(f"{item_code} - {item['name']} (${item['price']:.2f})")
+
 # TASK 2 - Placing an order.
 orders = []
 def place_order():
@@ -48,6 +53,10 @@ def calculate_takings_and_profit(profit_percentage):
     profit = total_takings * profit_percentage / 100
     print(f"Total daily takings: ${total_takings:.2f}")
     print(f"Profit: ${profit:.2f} ({profit_percentage}%)")
+    
+    
+
+print_menu()
 
 place_order()
 calculate_takings_and_profit(10)
