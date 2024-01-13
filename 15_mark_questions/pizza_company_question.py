@@ -57,6 +57,5 @@ def calculate_takings_and_profit(profit_percentage):
     
 
 print_menu()
-
 place_order()
 calculate_takings_and_profit(10)
