@@ -1,0 +1,50 @@
+[
+  {
+    "color": "brown",
+    "type": "cat",
+    "size": "nano",
+    "name": "Simon"
+  },
+  {
+    "color": "red",
+    "type": "crab",
+    "size": "nano",
+    "name": "Crabby"
+  },
+  {
+    "color": "brown",
+    "type": "dog",
+    "size": "nano",
+    "name": "Toby"
+  },
+  {
+    "color": "red",
+    "type": "fox",
+    "size": "nano",
+    "name": "Spectre"
+  },
+  {
+    "color": "green",
+    "type": "turtle",
+    "size": "nano",
+    "name": "Shelldon"
+  },
+  {
+    "color": "white",
+    "type": "chicken",
+    "size": "nano",
+    "name": "Richie"
+  },
+  {
+    "color": "yellow",
+    "type": "zappy",
+    "size": "nano",
+    "name": "Zappy"
+  },
+  {
+    "color": "gray",
+    "type": "cockatiel",
+    "size": "nano",
+    "name": "Donna"
+  }
+]
